@@ -1,0 +1,1 @@
+webpackJsonp([0x5d16ea1533fc],{643:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Adrian Prananda",description:"A self-proclaimed technology enthusiast"}}},pathContext:{}}}});
