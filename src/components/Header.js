@@ -5,7 +5,8 @@ const descTexts = [
   { text: 'A Full-stack Software Engineer.' },
   { text: 'An Embedded Systems Engineer.' },
   { text: 'A World Traveler.' },
-  { text: 'A Life Enjoyer.'}
+  { text: 'A Music Aficionado.'},
+  { text: 'A Go Getter.' }
 ];
 
 class Header extends React.Component {

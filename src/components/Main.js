@@ -24,6 +24,13 @@ class Main extends React.Component {
             with interests in distributed systems,
             data processing, front-end development, automotive embedded systems, and artificial intelligence.
           </p>
+          <p>
+            I graduated from the University of Washington with a bachelor's degree in
+            Electrical and Computer Engineering.
+            My focus was mainly embedded systems and VLSI, but I also was immersed in the land of software engineering.
+            I also minored in Applied Mathematics where I learned to utilize numerical methods
+            to solve complex engineering problems.
+          </p>
           <p>I am currently working at 4C Insights as a software development engineer in which I contribute
             to engineer both the responsive frontend and distributed backend systems.
             Let's network and be friends!</p>
@@ -62,7 +69,7 @@ class Main extends React.Component {
           <h2 className="major">Backend Work</h2>
           <h3 className="minor">Image Processing Platform</h3>
           <span className="image main"><img src={pic03} alt="" /></span>
-          <p>One example back-end project I contributed to is to write a containerized Python processing platform
+          <p>One example back-end project I contributed to is to engineer a containerized Python processing platform
             that is used extensively by principal scientists and engineers in my recent company. The purpose of the
             platform is to be able to process high-volume of image and time series data to deliver to the
             customers.
@@ -77,12 +84,13 @@ class Main extends React.Component {
         </article>
 
         <article
-          id="contact" className={`${this.props.article === 'contact' ? 'active' : ''}
+          id="contact"
+          className={`${this.props.article === 'contact' ? 'active' : ''}
           ${this.props.articleTimeout ? 'timeout' : ''}`}
           style={{display: 'none'}}
         >
           <h2 className="major">Contact</h2>
-          <form method="post" action="#">
+          <form method="post" action="https://formspree.io/prananda0203@gmail.com">
             <div className="field half first">
               <label htmlFor="name">Name</label>
               <input type="text" name="name" id="name" />
@@ -100,6 +108,9 @@ class Main extends React.Component {
               <li><input type="reset" value="Reset" /></li>
             </ul>
           </form>
+          <p>Feel free to network with me through the following links or e-mail. I usually respond
+            during business hours (9am - 5pm PST) on the weekdays. Thank you so much for visiting my website.
+          </p>
           <ul className="icons">
             <li>
               <a href="https://www.linkedin.com/in/map34" className="icon fa-linkedin">
