@@ -34,7 +34,7 @@ class Header extends React.Component {
                 {
                   descTexts.map(token => [
                     <p>{token.text}</p>,
-                    <Typist.Backspace count={token.text.length} delay={200} />
+                    <Typist.Backspace count={token.text.length} delay={1000} />
                   ])
                 }
               </Typist> : ''

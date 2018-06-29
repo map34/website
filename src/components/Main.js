@@ -45,10 +45,10 @@ class Main extends React.Component {
           <h2 className="major">Frontend Work</h2>
           <h3 className="minor">Batch Images Uploader</h3>
           <span className="image main"><img src={pic02} alt="" /></span>
-          <p>One example of a frontend-project I contributed to is
+          <p>One example of a frontend project I contributed to is
             to create a native desktop application for users to properly upload their data to us to be processed.
             Some of the capabilities of the application include automatic
-            restarts during failure, smart queueing system to upload multiple systems,
+            restarts during failure, smart queueing system to upload multiple high-definition images,
             automatic (ever green) updates, and ability for users to select their captures based on GPS.
           </p>
           <p>
