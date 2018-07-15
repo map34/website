@@ -24,7 +24,7 @@ class Header extends React.Component {
     return (
       <header id="header" style={this.props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
-          <span className="icon fa-database"></span>
+          <span onClick={() => {this.props.onOpenArticle('skills');}} className="icon fa-database"></span>
         </div>
         <div className="content">
           <div className="inner">

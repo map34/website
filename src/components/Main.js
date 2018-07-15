@@ -1,9 +1,27 @@
 import React from 'react';
 
+import uniqueId from 'lodash/uniqueId';
 import pic01 from '../images/pic01.jpg';
 import pic02 from '../images/pic02.jpg';
 import pic03 from '../images/pic03.jpg';
 import resumePdf from '../assets/adrian_prananda_resume.pdf';
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  Legend,
+  PolarAngleAxis,
+  PolarRadiusAxis
+} from 'recharts';
+
+const data = [
+  { subject: 'Math', A: 100, fullMark: 100 },
+  { subject: 'Chinese', A: 98, fullMark: 100 },
+  { subject: 'English', A: 86, fullMark: 100 },
+  { subject: 'Geography', A: 99, fullMark: 100 },
+  { subject: 'Physics', A: 85, fullMark: 100 },
+  { subject: 'History', A: 65, fullMark: 100 },
+];
 
 class Main extends React.Component {
   render() {
@@ -19,7 +37,6 @@ class Main extends React.Component {
         >
           <h2 className="major">Intro</h2>
           <span className="image main"><img src={pic01} alt="" /></span>
-          <p></p>
           <p>Hello there, I am a self-proclaimed software engineer and technology enthusiast
             with interests in distributed systems,
             data processing, front-end development, automotive embedded systems, and artificial intelligence.
@@ -128,6 +145,39 @@ class Main extends React.Component {
               </a>
             </li>
           </ul>
+          {close}
+        </article>
+
+        <article
+          id="skills"
+          className={`${this.props.article === 'skills' ? 'active' : ''}
+          ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display: 'none'}}
+        >
+          <h2 className="major">Skills</h2>
+          <RadarChart
+            key={this.props.timeout ? uniqueId : -1}
+            cx={300}
+            cy={250}
+            outerRadius={150}
+            width={600}
+            height={500}
+            data={data}
+          >
+            <PolarGrid />
+            <PolarAngleAxis dataKey="subject" tick={{ fill: '#fff' }}/>
+            <PolarRadiusAxis tick={false} axisLine={false} />
+            <Radar
+              name="Mike"
+              dataKey="A"
+              stroke="#8884d8"
+              fill="#8884d8"
+              fillOpacity={0.6}
+            />
+          </RadarChart>
+          {/* <p>Hello there, I am a self-proclaimed software engineer and technology enthusiast
+            with interests in distributed systems,
+            data processing, front-end development, automotive embedded systems, and artificial intelligence.
+          </p> */}
           {close}
         </article>
 

@@ -53,11 +53,18 @@
 			line-height: 5.5rem;
 			border: solid _size(border-width) _palette(border);
 			border-radius: 100%;
+			-webkit-transition: -webkit-transform .8s ease-in-out;
+          	transition: transform .8s ease-in-out;
 
 			.icon {
 				&:before {
 					font-size: 2rem;
 				}
+			}
+
+			&:hover {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
 			}
 		}
 
