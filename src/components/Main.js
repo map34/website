@@ -1,39 +1,58 @@
 import React from 'react';
+import withSizes from 'react-sizes';
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer
+} from 'recharts';
 
 import uniqueId from 'lodash/uniqueId';
 import pic01 from '../images/pic01.jpg';
 import pic02 from '../images/pic02.jpg';
 import pic03 from '../images/pic03.jpg';
 import resumePdf from '../assets/adrian_prananda_resume.pdf';
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  Legend,
-  PolarAngleAxis,
-  PolarRadiusAxis
-} from 'recharts';
 
-const data = [
-  { subject: 'Math', A: 100, fullMark: 100 },
-  { subject: 'Chinese', A: 98, fullMark: 100 },
-  { subject: 'English', A: 86, fullMark: 100 },
-  { subject: 'Geography', A: 99, fullMark: 100 },
-  { subject: 'Physics', A: 85, fullMark: 100 },
-  { subject: 'History', A: 65, fullMark: 100 },
+const FULL_MARK = 100;
+
+const backEndData = [
+  { subject: 'Distributed Systems', A: 80, fullMark: FULL_MARK },
+  { subject: 'Python', A: 100, fullMark: FULL_MARK },
+  { subject: 'C/C++', A: 86, fullMark: FULL_MARK },
+  { subject: 'Ruby', A: 99, fullMark: FULL_MARK },
+  { subject: 'Infrastructure', A: 80, fullMark: FULL_MARK },
+  { subject: 'Databases', A: 70, fullMark: FULL_MARK},
+  { subject: 'Go', A: 86, fullMark: FULL_MARK },
+  { subject: 'Java', A: 70, fullMark: FULL_MARK },
+  { subject: 'Erlang', A: 20, fullMark: FULL_MARK }
 ];
+
+const responsiveWidthFactory = (width) => {
+  if (width <= 1200) {
+    return {
+      outerRadius: '80%',
+      minWidth: width * 0.8
+    };
+  }
+  return {
+    outerRadius: '90%',
+    minWidth: width * 0.5
+  };
+};
 
 class Main extends React.Component {
   render() {
 
-    let close = <div className="close" onClick={() => {this.props.onCloseArticle();}}></div>;
+    let close = <div className="close" onClick={() => { this.props.onCloseArticle(); }}></div>;
 
     return (
-      <div id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
+      <div id="main" style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}>
 
         <article id="intro"
           className={`${this.props.article === 'intro' ? 'active' : ''}
-          ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display: 'none'}}
+          ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}
         >
           <h2 className="major">Intro</h2>
           <span className="image main"><img src={pic01} alt="" /></span>
@@ -57,7 +76,7 @@ class Main extends React.Component {
         <article
           id="frontend_work"
           className={`${this.props.article === 'frontend_work' ? 'active' : ''}
-          ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display: 'none'}}
+          ${this.props.articleTimeout ? 'timeout' : ''}`} style={{ display: 'none' }}
         >
           <h2 className="major">Frontend Work</h2>
           <h3 className="minor">Batch Images Uploader</h3>
@@ -81,7 +100,7 @@ class Main extends React.Component {
           id="backend_work"
           className={`${this.props.article === 'backend_work' ? 'active' : ''}
           ${this.props.articleTimeout ? 'timeout' : ''}`}
-          style={{display: 'none'}}
+          style={{ display: 'none' }}
         >
           <h2 className="major">Backend Work</h2>
           <h3 className="minor">Image Processing Platform</h3>
@@ -104,7 +123,7 @@ class Main extends React.Component {
           id="contact"
           className={`${this.props.article === 'contact' ? 'active' : ''}
           ${this.props.articleTimeout ? 'timeout' : ''}`}
-          style={{display: 'none'}}
+          style={{ display: 'none' }}
         >
           <h2 className="major">Contact</h2>
           <form method="post" action="https://formspree.io/prananda0203@gmail.com">
@@ -149,35 +168,37 @@ class Main extends React.Component {
         </article>
 
         <article
+          key={this.props.width}
           id="skills"
           className={`${this.props.article === 'skills' ? 'active' : ''}
-          ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display: 'none'}}
+          ${this.props.articleTimeout ? 'timeout' : ''}`}
+          style={{
+            display: 'none',
+            minWidth: `${responsiveWidthFactory(this.props.width).minWidth}px`
+          }}
         >
           <h2 className="major">Skills</h2>
-          <RadarChart
-            key={this.props.timeout ? uniqueId : -1}
-            cx={300}
-            cy={250}
-            outerRadius={150}
-            width={600}
-            height={500}
-            data={data}
-          >
-            <PolarGrid />
-            <PolarAngleAxis dataKey="subject" tick={{ fill: '#fff' }}/>
-            <PolarRadiusAxis tick={false} axisLine={false} />
-            <Radar
-              name="Mike"
-              dataKey="A"
-              stroke="#8884d8"
-              fill="#8884d8"
-              fillOpacity={0.6}
-            />
-          </RadarChart>
-          {/* <p>Hello there, I am a self-proclaimed software engineer and technology enthusiast
-            with interests in distributed systems,
-            data processing, front-end development, automotive embedded systems, and artificial intelligence.
-          </p> */}
+          <h3 className="minor">Backend technology</h3>
+          <ResponsiveContainer aspect={1}>
+            <RadarChart
+              key={this.props.timeout ? uniqueId : -1}
+              cx="50%"
+              cy="50%"
+              outerRadius={`${responsiveWidthFactory(this.props.width).outerRadius}`}
+              data={backEndData}
+            >
+              <PolarGrid />
+              <PolarAngleAxis dataKey="subject" tick={{ fill: '#fff' }} />
+              <PolarRadiusAxis tick={false} axisLine={false} />
+              <Radar
+                name="Mike"
+                dataKey="A"
+                stroke="#8884d8"
+                fill="#8884d8"
+                fillOpacity={0.6}
+              />
+            </RadarChart>
+          </ResponsiveContainer>
           {close}
         </article>
 
@@ -186,7 +207,14 @@ class Main extends React.Component {
   }
 }
 
+const mapSizesToProps = ({ width, height }) => ({
+  width,
+  height
+});
+
 Main.propTypes = {
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
   route: React.PropTypes.object,
   article: React.PropTypes.string,
   articleTimeout: React.PropTypes.bool,
@@ -194,4 +222,4 @@ Main.propTypes = {
   timeout: React.PropTypes.bool
 };
 
-export default Main;
+export default withSizes(mapSizesToProps)(Main);

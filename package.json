@@ -13,11 +13,12 @@
     "gatsby-plugin-sass": "^1.0.26",
     "gatsby-plugin-sharp": "^1.6.48",
     "gatsby-remark-copy-linked-files": "^1.5.30",
-    "gatsby-remark-images": "^1.5.56",
+    "gatsby-remark-images": "^1.5.67",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.37",
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.10",
+    "react-sizes": "^1.0.4",
     "react-typist": "^2.0.4",
     "recharts": "^1.0.1"
   },
