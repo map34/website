@@ -23,7 +23,7 @@ class Header extends React.Component {
   render() {
     return (
       <header id="header" style={this.props.timeout ? {display: 'none'} : {}}>
-        <div className="logo">
+        <div className={`logo ${this.props.rotateIcon ? 'rotating' : ''}`}>
           <span onClick={() => {this.props.onOpenArticle('skills');}} className="icon fa-database"></span>
         </div>
         <div className="content">

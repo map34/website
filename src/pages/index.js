@@ -13,22 +13,32 @@ class IndexPage extends React.Component {
       timeout: false,
       articleTimeout: false,
       article: '',
-      loading: 'is-loading'
+      loading: 'is-loading',
+      rotateIcon: true
     };
+    this.timeoutIds = [];
     this.handleOpenArticle = this.handleOpenArticle.bind(this);
     this.handleCloseArticle = this.handleCloseArticle.bind(this);
   }
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => {
+    this.timeoutIds.push(setTimeout(() => {
       this.setState({loading: ''});
-    }, 100);
+      // Rotate after finishing loading
+      this.timeoutIds.push(setTimeout(() => {
+        this.setState({
+          rotateIcon: false
+        });
+      }, 1600));
+    }, 100));
   }
 
   componentWillUnmount() {
-    if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
-    }
+    this.timeoutIds.forEach(id => {
+      if (id) {
+        clearTimeout(id);
+      }
+    });
   }
 
   handleOpenArticle(article) {
@@ -77,7 +87,11 @@ class IndexPage extends React.Component {
     return (
       <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
         <div id="wrapper">
-          <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+          <Header
+            onOpenArticle={this.handleOpenArticle}
+            timeout={this.state.timeout}
+            rotateIcon={this.state.rotateIcon}
+          />
           <Main
             isArticleVisible={this.state.isArticleVisible}
             timeout={this.state.timeout}
