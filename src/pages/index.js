@@ -5,6 +5,8 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 import Footer from '../components/Footer';
 
+import * as GA from '../utils/reactga';
+
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +24,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    GA.initializeGA(this.props);
     this.timeoutIds.push(setTimeout(() => {
       this.setState({loading: ''});
       // Rotate after finishing loading
@@ -42,6 +45,11 @@ class IndexPage extends React.Component {
   }
 
   handleOpenArticle(article) {
+    GA.event({
+      category: 'User',
+      action: `Clicked on article ${article}`,
+      label: 'Article Clicks'
+    });
 
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
