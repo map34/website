@@ -41,7 +41,7 @@ class Header extends React.Component {
             }
           </div>
         </div>
-        <nav>
+        <nav className="gen-selections">
           <ul>
             <li><a href="javascript:;" onClick={() => {this.props.onOpenArticle('intro');}}>Intro</a></li>
             <li><a href="javascript:;" onClick={() => {this.props.onOpenArticle('frontend_work');}}>Frontend Work</a></li>

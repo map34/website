@@ -1,48 +1,22 @@
 import React from 'react';
 import withSizes from 'react-sizes';
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  ResponsiveContainer
-} from 'recharts';
 
-import uniqueId from 'lodash/uniqueId';
+import { SkillGraph, responsiveWidthFactory } from './SkillGraph';
+
 import pic01 from '../images/pic01.jpg';
 import pic02 from '../images/pic02.jpg';
 import pic03 from '../images/pic03.jpg';
 import resumePdf from '../assets/adrian_prananda_resume.pdf';
 
-const FULL_MARK = 100;
-
-const backEndData = [
-  { subject: 'Distributed Systems', A: 80, fullMark: FULL_MARK },
-  { subject: 'Python', A: 100, fullMark: FULL_MARK },
-  { subject: 'C/C++', A: 86, fullMark: FULL_MARK },
-  { subject: 'Ruby', A: 99, fullMark: FULL_MARK },
-  { subject: 'Infrastructure', A: 80, fullMark: FULL_MARK },
-  { subject: 'Databases', A: 70, fullMark: FULL_MARK},
-  { subject: 'Go', A: 86, fullMark: FULL_MARK },
-  { subject: 'Java', A: 70, fullMark: FULL_MARK },
-  { subject: 'Erlang', A: 20, fullMark: FULL_MARK }
-];
-
-const responsiveWidthFactory = (width) => {
-  if (width <= 1200) {
-    return {
-      outerRadius: '80%',
-      minWidth: width * 0.8
-    };
-  }
-  return {
-    outerRadius: '90%',
-    minWidth: width * 0.5
-  };
-};
-
 class Main extends React.Component {
+  state = {
+    skill: 'frontend'
+  }
+
+  selectSkill = (skill) => {
+    this.setState({ skill });
+  }
+
   render() {
 
     let close = <div className="close" onClick={() => { this.props.onCloseArticle(); }}></div>;
@@ -178,27 +152,31 @@ class Main extends React.Component {
           }}
         >
           <h2 className="major">Skills</h2>
-          <h3 className="minor">Backend technology</h3>
-          <ResponsiveContainer aspect={1}>
-            <RadarChart
-              key={this.props.timeout ? uniqueId : -1}
-              cx="50%"
-              cy="50%"
-              outerRadius={`${responsiveWidthFactory(this.props.width).outerRadius}`}
-              data={backEndData}
-            >
-              <PolarGrid />
-              <PolarAngleAxis dataKey="subject" tick={{ fill: '#fff' }} />
-              <PolarRadiusAxis tick={false} axisLine={false} />
-              <Radar
-                name="Mike"
-                dataKey="A"
-                stroke="#8884d8"
-                fill="#8884d8"
-                fillOpacity={0.6}
-              />
-            </RadarChart>
-          </ResponsiveContainer>
+          <div className="graph-selections">
+            <ul>
+              <li>
+                <a
+                  className={this.state.skill === 'frontend' ? 'selected' : ''}
+                  href="javascript:;" onClick={() => {this.selectSkill('frontend');}}
+                >
+                  Frontend
+                </a>
+              </li>
+              <li>
+                <a
+                  className={this.state.skill === 'backend' ? 'selected' : ''}
+                  href="javascript:;" onClick={() => {this.selectSkill('backend');}}
+                >
+                  Backend
+                </a>
+              </li>
+            </ul>
+          </div>
+          <SkillGraph {...{
+            skill: this.state.skill,
+            width: this.props.width,
+            timeout: this.props.timeout
+          }} />
           {close}
         </article>
 

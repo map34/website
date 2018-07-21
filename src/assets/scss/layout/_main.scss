@@ -86,6 +86,20 @@
 				}
 			}
 
+			.graph-selections {
+				@extend .gen-selections;
+				ul {
+					display: table;
+					li {
+						a {
+							&.selected {
+								@extend :active;
+							}
+						}
+						display: table-cell;
+					}
+				}
+			}
 		}
 
 		@include breakpoint(small) {
