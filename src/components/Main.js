@@ -3,6 +3,7 @@ import withSizes from 'react-sizes';
 
 import { SkillGraph, responsiveWidthFactory } from './SkillGraph';
 
+import * as GA from '../utils/reactga';
 import pic01 from '../images/pic01.jpg';
 import pic02 from '../images/pic02.jpg';
 import pic03 from '../images/pic03.jpg';
@@ -14,7 +15,20 @@ class Main extends React.Component {
   }
 
   selectSkill = (skill) => {
+    GA.event({
+      category: 'User',
+      action: `Clicked on Skill Type: ${skill}`,
+      label: 'Skill Button Clicks'
+    });
     this.setState({ skill });
+  }
+
+  onContactLinkClick = (type) => {
+    GA.event({
+      category: 'User',
+      action: `Clicked on Contact Link: ${type}`,
+      label: 'Contact Link Clicks'
+    });
   }
 
   render() {
@@ -123,17 +137,29 @@ class Main extends React.Component {
           </p>
           <ul className="icons">
             <li>
-              <a href="https://www.linkedin.com/in/map34" className="icon fa-linkedin">
+              <a
+                href="https://www.linkedin.com/in/map34"
+                className="icon fa-linkedin"
+                onClick={() => { this.onContactLinkClick('linkedin'); }}
+              >
                 <span className="label">Linkedin</span>
               </a>
             </li>
             <li>
-              <a href="https://github.com/map34" className="icon fa-github">
+              <a
+                href="https://github.com/map34"
+                className="icon fa-github"
+                onClick={() => { this.onContactLinkClick('github'); }}
+              >
                 <span className="label">GitHub</span>
               </a>
             </li>
             <li>
-              <a href={resumePdf} className="icon fa-file-text">
+              <a
+                href={resumePdf}
+                className="icon fa-file-text"
+                onClick={() => { this.onContactLinkClick('resume'); }}
+              >
                 <span className="label">Resume</span>
               </a>
             </li>
@@ -157,7 +183,8 @@ class Main extends React.Component {
               <li>
                 <a
                   className={this.state.skill === 'frontend' ? 'selected' : ''}
-                  href="javascript:;" onClick={() => {this.selectSkill('frontend');}}
+                  href="javascript:;"
+                  onClick={() => {this.selectSkill('frontend');}}
                 >
                   Frontend
                 </a>
@@ -165,18 +192,19 @@ class Main extends React.Component {
               <li>
                 <a
                   className={this.state.skill === 'backend' ? 'selected' : ''}
-                  href="javascript:;" onClick={() => {this.selectSkill('backend');}}
+                  href="javascript:;"
+                  onClick={() => {this.selectSkill('backend');}}
                 >
                   Backend
                 </a>
               </li>
             </ul>
           </div>
-          <SkillGraph {...{
-            skill: this.state.skill,
-            width: this.props.width,
-            timeout: this.props.timeout
-          }} />
+          <SkillGraph
+            skill={this.state.skill}
+            width={this.props.width}
+            timeout={this.props.timeout}
+          />
           {close}
         </article>
 
