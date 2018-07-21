@@ -4,7 +4,7 @@ module.exports = {
     author: 'Adrian Prananda',
     description: 'A self-proclaimed technology enthusiast'
   },
-  pathPrefix: '/website',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: 'gatsby-plugin-favicon',

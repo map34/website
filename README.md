@@ -2,7 +2,7 @@
 
 ## Preview
 
-https://map34.github.io/website/
+https://pranamocha.com/
 
 ## Installation
 
