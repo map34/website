@@ -7,7 +7,7 @@ import * as GA from '../utils/reactga';
 import pic01 from '../images/pic01.jpg';
 import pic02 from '../images/pic02.jpg';
 import pic03 from '../images/pic03.jpg';
-import resumePdf from '../assets/adrian_prananda_resume.pdf';
+import resumePdf from '../assets/docs/adrian_prananda_resume.pdf';
 
 class Main extends React.Component {
   state = {
@@ -135,7 +135,7 @@ class Main extends React.Component {
           <p>Feel free to network with me through the following links or e-mail. I usually respond
             during business hours (9am - 5pm PST) on the weekdays. Thank you so much for visiting my website.
           </p>
-          <ul className="icons">
+          <ul className="icons main-icons">
             <li>
               <a
                 href="https://www.linkedin.com/in/map34"

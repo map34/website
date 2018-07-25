@@ -8,8 +8,7 @@ https://pranamocha.com/
 
 ```bash
 git clone https://github.com/map34/website
-npm install -g gatsby
 npm install
 ```
 
-Run `gatsby develop` in the terminal to start.
+Run `npm run dev` in the terminal to start.

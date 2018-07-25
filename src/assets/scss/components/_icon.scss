@@ -14,4 +14,21 @@
 		> .label {
 			display: none;
 		}
+		background-size: cover;
+	}
+
+	.react-icon {
+		background-image: url('../icons/react.png');
+	}
+
+	.gatsby-icon {
+		background-image: url('../icons/gatsby.png');
+	}
+
+	.ga-icon {
+		background-image: url('../icons/google_analytics.png');
+	}
+
+	.sass-icon {
+		background-image: url('../icons/sass.png');
 	}
