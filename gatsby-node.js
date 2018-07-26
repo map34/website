@@ -43,7 +43,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'build-javascript') {
+
     // turn off source-maps
-    config.merge({ devtool: false });
+    config.merge({
+      devtool: false
+    });
   }
 };

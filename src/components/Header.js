@@ -1,5 +1,6 @@
 import React from 'react';
 import Typist from 'react-typist';
+import PropTypes from 'prop-types';
 
 const descTexts = [
   { text: 'A Full-stack Software Engineer.' },
@@ -83,8 +84,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  onOpenArticle: React.PropTypes.func,
-  timeout: React.PropTypes.bool
+  onOpenArticle: PropTypes.func,
+  timeout: PropTypes.bool
 };
 
 export default Header;

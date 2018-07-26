@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withSizes from 'react-sizes';
 
 import { SkillGraph, responsiveWidthFactory } from './SkillGraph';
@@ -219,13 +220,13 @@ const mapSizesToProps = ({ width, height }) => ({
 });
 
 Main.propTypes = {
-  width: React.PropTypes.number,
-  height: React.PropTypes.number,
-  route: React.PropTypes.object,
-  article: React.PropTypes.string,
-  articleTimeout: React.PropTypes.bool,
-  onCloseArticle: React.PropTypes.func,
-  timeout: React.PropTypes.bool
+  width: PropTypes.number,
+  height: PropTypes.number,
+  route: PropTypes.object,
+  article: PropTypes.string,
+  articleTimeout: PropTypes.bool,
+  onCloseArticle: PropTypes.func,
+  timeout: PropTypes.bool
 };
 
 export default withSizes(mapSizesToProps)(Main);
