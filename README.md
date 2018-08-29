@@ -1,4 +1,4 @@
-# Adrian Pranada's Personal Website
+# Adrian Prananda's Personal Website
 
 ## Preview
 
