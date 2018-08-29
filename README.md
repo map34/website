@@ -8,7 +8,7 @@ https://pranamocha.com/
 
 ```bash
 git clone https://github.com/map34/website
-npm install
+cd website && npm install
 ```
 
 Run `npm run dev` in the terminal to start.
