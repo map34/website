@@ -56,8 +56,9 @@ class Main extends React.Component {
             I also minored in Applied Mathematics where I learned to utilize numerical methods
             to solve complex engineering problems.
           </p>
-          <p>I am currently working at 4C Insights as a software development engineer in which I contribute
-            to engineer both the responsive frontend and distributed backend systems.
+          <p>I am currently working at LivePerson in which I help architect, implement, and test conversational
+            commerce solutions to orchestrate humans and AI, at scale.
+            At LivePerson, I am used to many hats acting as an engineer, technical lead, or a program manager.
             Let's network and be friends!</p>
           {close}
         </article>

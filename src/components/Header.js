@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const descTexts = [
   { text: 'A Full-stack Software Engineer.' },
-  { text: 'An Embedded Systems Engineer.' },
+  { text: 'A Large-Scale Infrastucture Engineer.' },
   { text: 'A World Traveler.' },
   { text: 'A Music Aficionado.'},
   { text: 'A Go Getter.' }
