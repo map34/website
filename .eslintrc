@@ -28,10 +28,12 @@
   "parser": "babel-eslint",
 
   "plugins": [
-
+    "react"
   ],
 
   "rules": {
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
     "block-scoped-var": 2,
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],
     "camelcase": [2, { "properties": "always" }],
