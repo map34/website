@@ -58,7 +58,8 @@ class Main extends React.Component {
           </p>
           <p>I am currently working at LivePerson in which I help architect, implement, and test conversational
             commerce solutions to orchestrate humans and AI, at scale.
-            At LivePerson, I am used to many hats acting as an engineer, technical lead, or a program manager.
+            At LivePerson, I am accustomed to wearing multiple hats.
+            My roles include being a software engineer and a technical lead.
             Let's network and be friends!</p>
           {close}
         </article>
