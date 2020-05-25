@@ -11,5 +11,5 @@ git reset --hard && git clean -fd
 npm version patch -m "[skip travis] Upgrade to version %s"
 git push --follow-tags
 
-echo "Deploying GH pages..."
-npm run deploy
+echo "Deploying to Firebase..."
+npm run deploy:firebase -- --token $FIREBASE_TOKEN

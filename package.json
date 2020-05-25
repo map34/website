@@ -42,13 +42,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build --prefix-paths",
-    "deploy": "npm run build && gh-pages -d public",
+    "deploy:firebase": "npm run build && firebase deploy --project website-2a333",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.5",
     "eslint": "^5.0.1",
     "eslint-plugin-react": "^7.20.0",
-    "gh-pages": "^1.2.0"
+    "firebase-tools": "^8.4.0"
   }
 }
