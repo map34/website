@@ -1,14 +1,12 @@
 language: node_js
 node_js:
-  - 11
+- 11
 cache: npm
 script:
-  - npm run lint
-env:
-  - secure: "If8ioNTi/WsgOfAkUJxDDXPC85JzRV3BcHtxZZ6ccMxB88TosfuLIodJUhpEX6eBMS8UTLNX3v69ycjAQiGNEZ30I1wtRECpDNE2qI1TT9GsKfWGuflGz3H+9wnb4sIGIscZ5B45k1nFy5da6SkKKwZk78uYSRjUPUX0JHIwB5Cu+ldtgr8P+xUMigCs3SM6UUAZX7xNfU06Z0HHdu7AR57p0y8Re3D+kVT/Ol3C5MrCwTf5YSQ7Q9RLqW2M0wHdX7uDUEOr0OMXXxDHk6n8pEDMQntRNGQ2OZfVoLYR4IyguiL3N4UafVeuN2A7ewud1Cjc74ZeSyVW6lD81Bnlwo72o0lE7GhlGlZy1sjvfkR64+tDxgH6qPgX4iGUzZfUvfIrAmw7zpmMF2XRcF8gLAjVVyYENO3einCKs3o4VRjcQ3BitSsqO/Us3T/Pt4Uh6B0yGAvZuyUwnqJpfK8Q0YWbbNJ797GA62ayAQFX9TaHPYTHx4CzqjWqWz+YryQWomBlnkmAvKQIokk67pJvjoQ5lgJIJ7GNhtRhfn9Hxv1h0+A1W/ElmVRxCgk3UpHLePfAsyM4vCgKkQ/fwsnBaR3HefSZqLw9hmovNHLtnXa8dbGlUODFoekoe5j71yUTGLhyanEufDcxJWrfs24MRj/29Zh16W1SWlwnul3gRWs="
+- npm run lint
 deploy:
   provider: script
-  script: ./release.sh
+  script: "./release.sh"
   skip_cleanup: true
   on:
     branch: master

@@ -5,6 +5,7 @@ const Footer = (props) => (
   <footer id="footer" style={props.timeout ? {display: 'none'} : {}}>
     <p className="copyright">Design. Implement. Test. Ask Questions!</p>
     <br />
+    <p className="copyright">Version: {props.version}</p>
     <p className="copyright">Powered by</p>
     <ul className="icons footer-icons">
       <li>
@@ -44,7 +45,8 @@ const Footer = (props) => (
 );
 
 Footer.propTypes = {
-  timeout: PropTypes.bool
+  timeout: PropTypes.bool,
+  version: PropTypes.string
 };
 
 export default Footer;
