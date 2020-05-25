@@ -10,6 +10,7 @@ import * as GA from '../utils/reactga';
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
+    this.version = props.data.site.siteMetadata.version;
     this.state = {
       isArticleVisible: false,
       timeout: false,
@@ -107,12 +108,22 @@ class IndexPage extends React.Component {
             article={this.state.article}
             onCloseArticle={this.handleCloseArticle}
           />
-          <Footer timeout={this.state.timeout} />
+          <Footer timeout={this.state.timeout} version={this.version} />
         </div>
         <div id="bg"></div>
       </div>
     );
   }
 }
+
+export const pageQuery = graphql`
+  query IndexPageQuery {
+    site {
+      siteMetadata {
+        version
+      }
+    }
+  }
+`;
 
 export default IndexPage;

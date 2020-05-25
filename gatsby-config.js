@@ -1,8 +1,11 @@
+const packageJson = require('./package.json');
+
 module.exports = {
   siteMetadata: {
     title: 'Adrian Prananda',
     author: 'Adrian Prananda',
-    description: 'A self-proclaimed technology enthusiast'
+    description: 'A self-proclaimed technology enthusiast',
+    version: packageJson.version,
   },
   pathPrefix: '/',
   plugins: [
