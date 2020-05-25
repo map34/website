@@ -20,6 +20,7 @@ class NewPage extends React.Component {
 
 export default NewPage;
 
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
   query NewPageQuery {
     site {

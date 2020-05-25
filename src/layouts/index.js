@@ -2,10 +2,6 @@ import React from 'react';
 import '../assets/scss/main.scss';
 import Helmet from 'react-helmet';
 
-import Header from '../components/Header';
-import Main from '../components/Main';
-import Footer from '../components/Footer';
-
 class Template extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title;
@@ -37,6 +33,7 @@ class Template extends React.Component {
 
 export default Template;
 
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
   query PageQuery {
     site {

@@ -23,6 +23,7 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate;
 
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     site {
