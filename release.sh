@@ -12,4 +12,4 @@ npm version patch -m "[skip travis] Upgrade to version %s"
 git push --follow-tags
 
 echo "Deploying GH pages..."
-npm run deploy
+npm run deploy:firebase -- --token $FIREBASE_TOKEN
