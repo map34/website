@@ -116,6 +116,7 @@ class IndexPage extends React.Component {
   }
 }
 
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
   query IndexPageQuery {
     site {
