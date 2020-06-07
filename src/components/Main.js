@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withSizes from 'react-sizes';
 
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import '../assets/scss/components/_carousel.scss';
+import { Carousel } from 'react-responsive-carousel';
+
 import { SkillGraph, responsiveWidthFactory } from './SkillGraph';
 
 import * as GA from '../utils/reactga';
@@ -93,20 +97,56 @@ class Main extends React.Component {
           ${this.props.articleTimeout ? 'timeout' : ''}`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Backend Work</h2>
-          <h3 className="minor">Image Processing Platform</h3>
-          <span className="image main"><img src={pic03} alt="" /></span>
-          <p>One example back-end project I contributed to is to engineer a containerized Python processing platform
-            that is used extensively by principal scientists and engineers in my recent company. The purpose of the
-            platform is to be able to process high-volume of image and time series data to deliver to the
-            customers.
-          </p>
-          <p>Another example of the platform’s capability is to export high-definition Geotiffs with
-            different types of vegetation layers. This requires about 1,000 to 60,000 (mostly images) files to
-            be uploaded at a time by users, in which have to be properly radiometrically calibrated,
-            registered, stitched, and verified. Some of the tools used include Scipy, Numpy, OpenCV,
-            pandas, GDAL, and Airflow.
-          </p>
+          <Carousel>
+            <div>
+              <h2 className="major">Backend Work</h2>
+              <h3 className="minor">Image Processing Platform</h3>
+              <span className="image main"><img src={pic03} alt="" /></span>
+              <p>One example back-end project I contributed to is to engineer a containerized Python processing platform
+                that is used extensively by principal scientists and engineers in my recent company. The purpose of the
+                platform is to be able to process high-volume of image and time series data to deliver to the
+                customers.
+              </p>
+              <p>Another example of the platform’s capability is to export high-definition Geotiffs with
+                different types of vegetation layers. This requires about 1,000 to 60,000 (mostly images) files to
+                be uploaded at a time by users, in which have to be properly radiometrically calibrated,
+                registered, stitched, and verified. Some of the tools used include Scipy, Numpy, OpenCV,
+                pandas, GDAL, and Airflow.
+              </p>
+            </div>
+            <div>
+              <h2 className="major">Backend Work</h2>
+              <h3 className="minor">Image Processing Platform</h3>
+              <span className="image main"><img src={pic03} alt="" /></span>
+              <p>One example back-end project I contributed to is to engineer a containerized Python processing platform
+                that is used extensively by principal scientists and engineers in my recent company. The purpose of the
+                platform is to be able to process high-volume of image and time series data to deliver to the
+                customers.
+              </p>
+              <p>Another example of the platform’s capability is to export high-definition Geotiffs with
+                different types of vegetation layers. This requires about 1,000 to 60,000 (mostly images) files to
+                be uploaded at a time by users, in which have to be properly radiometrically calibrated,
+                registered, stitched, and verified. Some of the tools used include Scipy, Numpy, OpenCV,
+                pandas, GDAL, and Airflow.
+              </p>
+            </div>
+            <div>
+              <h2 className="major">Backend Work</h2>
+              <h3 className="minor">Image Processing Platform</h3>
+              <span className="image main"><img src={pic03} alt="" /></span>
+              <p>One example back-end project I contributed to is to engineer a containerized Python processing platform
+                that is used extensively by principal scientists and engineers in my recent company. The purpose of the
+                platform is to be able to process high-volume of image and time series data to deliver to the
+                customers.
+              </p>
+              <p>Another example of the platform’s capability is to export high-definition Geotiffs with
+                different types of vegetation layers. This requires about 1,000 to 60,000 (mostly images) files to
+                be uploaded at a time by users, in which have to be properly radiometrically calibrated,
+                registered, stitched, and verified. Some of the tools used include Scipy, Numpy, OpenCV,
+                pandas, GDAL, and Airflow.
+              </p>
+            </div>
+          </Carousel>
           {close}
         </article>
 
