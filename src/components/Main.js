@@ -8,7 +8,6 @@ import * as GA from '../utils/reactga';
 import pic01 from '../images/pic01.webp';
 import pic02 from '../images/pic02.webp';
 import pic03 from '../images/pic03.webp';
-import resumePdf from '../assets/docs/adrian_prananda_resume.pdf';
 
 class Main extends React.Component {
   state = {
@@ -159,7 +158,7 @@ class Main extends React.Component {
             </li>
             <li>
               <a
-                href={resumePdf}
+                href="https://docs.google.com/document/d/1dC5nHtxZGOhxzQ8mrtDLEYujfo1UPTO4dKALm8PwVhA/edit?usp=sharing"
                 className="icon fa-file-text"
                 onClick={() => { this.onContactLinkClick('resume'); }}
               >
