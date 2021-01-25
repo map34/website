@@ -16,11 +16,11 @@ const backEndData = [
   { subject: 'Python', A: 100, fullMark: FULL_MARK },
   { subject: 'C/C++', A: 86, fullMark: FULL_MARK },
   { subject: 'Ruby', A: 99, fullMark: FULL_MARK },
-  { subject: 'Infrastructure', A: 80, fullMark: FULL_MARK },
+  { subject: 'AWS', A: 80, fullMark: FULL_MARK },
   { subject: 'Databases', A: 70, fullMark: FULL_MARK},
   { subject: 'Go', A: 86, fullMark: FULL_MARK },
   { subject: 'Java', A: 70, fullMark: FULL_MARK },
-  { subject: 'Erlang', A: 20, fullMark: FULL_MARK }
+  { subject: 'Kafka', A: 86, fullMark: FULL_MARK }
 ];
 
 const frontEndData = [
