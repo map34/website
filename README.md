@@ -1,6 +1,6 @@
 # Adrian Prananda's Personal Website
 
-[![Build Status](https://travis-ci.org/map34/website.svg?branch=master)](https://travis-ci.org/github/map34/website)
+[![Build Status](https://travis-ci.com/map34/website.svg?branch=master)](https://travis-ci.com/github/map34/website)
 
 ## Preview
 
