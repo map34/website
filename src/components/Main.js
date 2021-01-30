@@ -71,18 +71,19 @@ class Main extends React.Component {
           <h2 className="major">Frontend Work</h2>
           <h3 className="minor">Batch Images Uploader</h3>
           <span className="image main"><img src={pic02} alt="" /></span>
-          <p>One example of a frontend project I contributed to is
-            to create a native desktop application for users to properly upload their data to us to be processed.
-            Some of the capabilities of the application include automatic
-            restarts during failure, smart queueing system to upload multiple high-definition images,
-            automatic (ever green) updates, and ability for users to select their captures based on GPS.
+          <p>At MicaSense, one example of a frontend project I contributed to is to create a native desktop application
+            for uploading files.
+            Once the files are uploaded, a backend system will process these files for multispectral visualizations.
+            The uploader automatically restarts the uploading process during network failures.
+            The uploader also includes a smart queueing system to upload multiple high-definition images,
+            updates automatically (evergreen),
+            and allows users to select their captures based on GPS locations.
           </p>
           <p>
-            Some of the software stacks used for this is
-            Electron (NodeJS based framework), NPM, ReactJS, Redux and Exiftool.
-            One of the biggest challenges on this project is to make sure the UI is
-            responsive when users upload a large amount of data
-            (in the magnitude of 10,000 to 100,000 files a t a time).</p>
+          Some of the software stacks used for this are Electron (NodeJS based framework),
+          NPM, ReactJS, Redux, and Exiftool.
+          One of the biggest challenges of this project is to make sure the UI is responsive when users upload
+          a large amount of data (in the magnitude of 10,000 to 100,000 files at a time).</p>
           {close}
         </article>
 
@@ -95,16 +96,17 @@ class Main extends React.Component {
           <h2 className="major">Backend Work</h2>
           <h3 className="minor">Image Processing Platform</h3>
           <span className="image main"><img src={pic03} alt="" /></span>
-          <p>One example back-end project I contributed to is to engineer a containerized Python processing platform
-            that is used extensively by principal scientists and engineers in my recent company. The purpose of the
-            platform is to be able to process high-volume of image and time series data to deliver to the
-            customers.
+          <p>At MicaSense, one example back-end project I contributed to is to engineer
+            a containerized Python processing platform.
+            The platform delivers a high volume of multispectral imagery and time-series data to customers,
+            such as scientists, engineers, and farmers.
           </p>
-          <p>Another example of the platform’s capability is to export high-definition Geotiffs with
-            different types of vegetation layers. This requires about 1,000 to 60,000 (mostly images) files to
-            be uploaded at a time by users, in which have to be properly radiometrically calibrated,
-            registered, stitched, and verified. Some of the tools used include Scipy, Numpy, OpenCV,
-            pandas, GDAL, and Airflow.
+          <p>An example of the platform’s capability is to export
+            high-definition GeoTiffs with different types of vegetation layers.
+            This system requires about 1,000 to 60,000 (mostly images) files to be uploaded at a time by users.
+            Then, the system calibrates, registers, stitches, and verifies these files.
+            This process constitutes a job workflow that is distributed across 100 to 200 worker nodes.
+            Some of the tools used include Scipy, Numpy, OpenCV, Pandas, GDAL, and Airflow.
           </p>
           {close}
         </article>
