@@ -29,7 +29,7 @@ class Header extends React.Component {
           // <div className={`logo ${this.props.rotateIcon ? 'rotating' : ''}`}>
         }
         <div className={'logo'}>
-        <span className="icon fa-database"></span>
+          <span className="icon fa-database"></span>
         </div>
         <div className="content">
           <div className="inner">
