@@ -24,8 +24,12 @@ class Header extends React.Component {
   render() {
     return (
       <header id="header" style={this.props.timeout ? {display: 'none'} : {}}>
-        <div className={`logo ${this.props.rotateIcon ? 'rotating' : ''}`}>
-          <span onClick={() => {this.props.onOpenArticle('skills');}} className="icon fa-database"></span>
+        {
+          // Uncomment to hover on start-up
+          // <div className={`logo ${this.props.rotateIcon ? 'rotating' : ''}`}>
+        }
+        <div className={'logo'}>
+        <span className="icon fa-database"></span>
         </div>
         <div className="content">
           <div className="inner">
@@ -50,6 +54,14 @@ class Header extends React.Component {
                 onClick={() => {this.props.onOpenArticle('intro');}}
               >
                 Introduction
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:;"
+                onClick={() => {this.props.onOpenArticle('skills');}}
+              >
+                Skills
               </a>
             </li>
             <li>

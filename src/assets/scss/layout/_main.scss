@@ -90,6 +90,7 @@
 				@extend .gen-selections;
 				ul {
 					display: table;
+					margin: auto;
 					li {
 						a {
 							&.selected {
