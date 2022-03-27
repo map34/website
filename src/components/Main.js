@@ -55,7 +55,8 @@ class Main extends React.Component {
             I also minored in Applied Mathematics where I learned to utilize numerical methods
             to solve complex engineering problems.
           </p>
-          <p>I am currently working at Okta in which I help architect, implement, and test identity access management solutions for software developers.
+          <p>I am currently working at Okta in which I help architect, implement, and test
+            identity access management solutions for software developers.
             Let's network and be friends!</p>
           {close}
         </article>
