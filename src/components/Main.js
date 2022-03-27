@@ -55,10 +55,7 @@ class Main extends React.Component {
             I also minored in Applied Mathematics where I learned to utilize numerical methods
             to solve complex engineering problems.
           </p>
-          <p>I am currently working at LivePerson in which I help architect, implement, and test conversational
-            commerce solutions to orchestrate humans and AI, at scale.
-            At LivePerson, I am accustomed to wearing multiple hats.
-            My roles include being a software engineer and a technical lead.
+          <p>I am currently working at Okta in which I help architect, implement, and test identity access management solutions for software developers.
             Let's network and be friends!</p>
           {close}
         </article>
